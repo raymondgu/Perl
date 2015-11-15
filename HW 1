@@ -1,0 +1,228 @@
+Ruoju Gu
+ECS 124 Assignment 1
+996868563
+
+PART A
+1.1
+Removing the first \n will cause the output to be :Welcome to PerlTATA is a box. Removing the 2nd will do the same thing. \t before Welcome will cause it to shift one tab to the right. Changing from " " to ' ' will cause everything to print on one line even if \n is used. No quotations at all will cause a syntax error. 
+
+Output: 
+#Output:
+#Welcome to Perl
+#TATA is a box
+
+1.1a 
+#Welcome toPerlTATA is a box
+1.1b
+#Welcome to PerlTATA is a box
+
+1.1c
+#Welcome to Perl
+#TATA is a box
+
+1.1d
+#	Welcome to Perl
+#TATA is a box
+
+1.1e
+#Welcome	 to Perl
+#TATA is a box
+
+1.1f
+#Welcome to Perl\nTATA is a box\n
+
+1.1g
+Error
+
+1.2
+#!/usr/bin/perl
+#print example
+
+print "When in double quotes: \n";
+print "Use \\\\ to output \\ \n";
+print "Use \\t to output tabs \n";
+
+1.3
+#!/usr/bin/perl
+#
+
+#!/usr/bin/perl
+#
+
+$dnastring = 'actttgact'; #$ means the variable holds a string
+$seconddna = 'tataccta';
+print "$dnastring\n"; #double quotes print the value of the string 
+print "$dnastring \t $seconddna \n";
+
+$nucstring = 'acCtagGgCCTTAcga'; #DNA
+$nucstring=~ tr/tT/uU/; #translate to RNA 
+print "$nucstring \n";
+$nucstring = 'acCtagGgCCTTAcga'; #DNA
+print "$nucstring \n";
+
+$dnastring=$nucstring
+
+prints the RNA above the DNA string
+
+1.4
+The translate function switches the lowercase t with the uppercase T.
+
+1.5
+#!/usr/bin/perl
+#
+
+$silly = 'tttTTT';
+$silly =~ tr/tT/Tt/;
+print $silly
+
+$omg = 'VRNrIAEelslrrFMVALILdIKrTPgNKPriaemICDIDtYIvEa';
+$omg =~ tr/A-Z a-z/a-z A-Z/;
+print $omg 
+
+1.6
+#!/usr/bin/perl
+#
+
+$gdragon = 'SEETQMRLQLKRKLQRNRTSFTQEQIEALEKEFERTHYPDVFARERL';
+print $gdragon;
+
+$gdragon =~ tr/ACGPSTWY/A/;
+$gdragon =~ tr/RNDQEHK/E/;
+$gdragon =~ tr/ILMFV/I/;
+print $gdragon;
+
+# Output:
+# SEETQMRLQLKRKLQRNRTSFTQEQIEALEKEFERTHYPDVFARERL
+# AEEAEIEIEIEIEEEEAAIAEEEIEAIEEIEEAEAAEIIAEEEI
+
+1.7
+No, the c command is used as a complement. Any character specified is then kept and the other characters are replaced with the desired character. 
+
+1.8 
+#!/usr/bin/perl
+#
+
+$sample = 'GAATGTCCTTTCTCTAAGTCCTAAG';
+print $sample;
+$sample =~ tr/ATCG/tagc/c;
+print $sample;
+
+1.9
+
+#!/usr/bin/perl
+#
+
+$sample = 'GAATGTCCTTTCTCTAAGTCCTAAG';
+$count = $sample =~ tr/AG/ag/;
+print "$count";
+
+count is 10
+
+PART B
+1.	What is NCBI, Entrez, Gene Expression Omnibus (GEO)
+
+NCBI is the National Center for Biotechnology Information. Entrez Global Query Cross Database search system is a search engine for health science databases. GEO is a genomics data repository.
+2.	What is Blast and what FASTA ? What are the differences of these two.
+
+Blast and FASTA are both software used to compare DNA sequences except Blast is faster and more accurate than FASTA. Blast can be modified but Fasta cannot. 
+3. Write down the names of at least their sequence alignment algorithms and their main differences
+
+Blast uses the Heuristic algorithm and Fasta uses the Smith-Waterman algorithm. The main difference is that the Blast may miss hard to find matches. Smith Waterman is more accurate but its also more time consuming. 
+4.	What is PubMed? What other ways exist to do the same thing?
+
+PubMed is a search engine that accesses the MEDLINE database. Gen Bank, Medscape and DrugInfo also are databases/search engines.
+PART C
+Find how many times ELVIS appears in the protein database SWISSPROT, how many 
+times LIVES appears, and how many time they appear consecutively. Do ELVIS and DEAD 
+appear together? How many times does PERL appear? Does PERLISGREAT appear? What 
+would it mean if any of these longer statements did appear in the the protein files?
+
+ELVIS:
+Statistics		this run	previous	gain	loss
+number of matches equal or below threshold	174	NA	NA	NA
+
+total	174	NA	NA	NA
+
+
+LIVES:
+Statistics		this run	previous	gain	loss
+number of matches equal or below threshold	126	NA	NA	NA
+
+total	126	NA	NA	NA
+
+ELVISLIVES:
+Original outputhereStatistics
+	this run	previous	gain	loss
+number of matches equal or below threshold	0	NA	NA	NA
+
+total	0	NA	NA	NA
+ELIVISDEAD
+Statistics		this run	previous	gain	loss
+number of matches equal or below threshold	0	NA	NA	NA
+
+total	0	NA	NA	NA
+
+PERL
+Statistics		this run	previous	gain	loss
+number of matches equal or below threshold	3963	NA	NA	NA
+
+total	3963	NA	NA	NA
+
+PERLISGREAT
+Original output	here
+
+Statistics		this run	previous	gain	loss
+number of matches equal or below threshold	0	NA	NA	NA
+
+total	0	NA	NA	NA
+
+
+It would be due to proteins being combined within the database. 
+PART D
+Perl Script to convert a file from FASTQ to FASTA. Use file sample.fasq
+
+#!/usr/bin/perl
+print "Input file name":
+$fastq = <>;
+open IN, "$fastq";
+print "Please input the name of the file to print \n";
+$fasta = <>;
+open OUT, ">$fasta";
+while ($line1 = <IN>)
+{
+	$line1 =~ tr/@/>/;
+	print OUT "$line1';
+	$line2 = <IN>;
+	print OUT "$line2";
+	$line3 = <IN>;
+	$line4 = <IN>;
+}
+close (IN);
+close (OUT);
+
+Convert FASTA to FASTQ
+#!usr/bin/perl
+#
+#fasta2q
+#
+print "Please input the name of the fastq file. \n";
+$fasta = <>;
+open IN, "$fasta";
+print "Please input the name of the file to print to. \n";
+$fastq = <>;
+open OUT, ">$fastq";
+while ($line1 = <IN>)
+{        $line1 =~ tr/>/@/;
+          print OUT "$line1";
+          ($line2 = <IN>);
+          print OUT "$line2";
+          ($line3 = <IN>);
+          print OUT "+ \n";
+          ($line4 = <IN>);
+          $line2 =~ tr/ACGT/BBBB/;
+          print OUT "$line2";
+}
+close (IN);
+close (OUT);
+
+B is an encoding for the value 2 for Phred Score in the Illumia test based encoding. The probability of nucleobase read at postion B is calculated using P= 10^(-Q/10) where Q is the quality score. 
