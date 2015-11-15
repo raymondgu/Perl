@@ -1,0 +1,555 @@
+Question 1.1
+Top 100 interactions:
+ 
+ 
+	DATA 1	DATA 2
+1	yheO	ygfB
+2	yjgM	leuT
+3	yieM	Z1100
+4	yhbW	udp
+5	LAMCG_ea31_c_at	SYNPBR322_bla_c_at
+6	psd	mscL
+7	Z2701	fucI
+8	nagD	metY
+9	glyY	pstB
+10	Z1693	Z1100
+11	pgsA	yacA
+12	ampD	murD
+13	araG	yaiZ
+14	cspF	glyY
+15	ybgJ	ptsP
+16	dsbE	glpK
+17	ybgA	PP1PHDDOC_gp10_at
+18	leuC	INM13X_II_3_at
+19	yadP	ycfO
+20	yhjR	yedE
+21	rrfD	narK
+22	fepD	FPLTRAID_trbH_at
+23	uvrC	yjjW
+24	Z4200	yigZ
+25	ydhC	ydbA
+26	waaU	azoR
+27	rrmJ	yjhI
+28	Z0233	yhjT
+29	rrlE	rpoB
+30	intZ	nlpC
+31	cutF	nrdH
+32	guaA	rimM
+33	yggB	yhiX
+34	ybbN	pldB
+35	ugpC	bdcA
+36	metB	mgtA
+37	yhjK	citG
+38	rrfF	yadH
+39	grxB	ydiI
+40	gtrA	ybiY
+41	cusS	hcr
+42	yraM	hyaC
+43	hfq	fruL
+44	slyB	queA
+45	yccJ	galR
+46	nrdB	speG
+47	ssrA	c4846
+48	yodC	grpE
+49	pbpC	ampD
+50	yfiM	ygfB
+51	insC1	ydfK
+52	mrdB	grpE
+53	ilvD	pgsA
+54	uspA	Z2760
+55	INM13X_II_5_at	yciR
+56	yeaA	cyoE
+57	helD	yhiI
+58	ptr	uup
+59	srlE	yieG
+60	qseA	mutH
+61	ygjG	yadG
+62	yrdD	ratB
+63	lepA	purH
+64	proB	yebA
+65	c4745	yrbE
+66	fliY	yncB
+67	rrmJ	yfhB
+68	glmU	rbfA
+69	yegH	rpoN
+70	dapD	fecA
+71	phnP	uxaC
+72	rrfA	c4846
+73	yhfX	hycG
+74	ysgA	yadH
+75	yhhT	uxaC
+76	glgP	yadC
+77	ybeZ	yabP
+78	udp	ygfA
+79	ychN	c1657
+80	ppa	ybhE
+81	pnuC	yacA
+82	ribA	yefM
+83	murA	c3976
+84	malF	hypC
+85	hemH	yeiO
+86	yigA	hyaE
+87	ybjQ	priA
+88	ygdR	hcp
+89	ftsE	kch
+90	cysE	aroK
+91	yeeX	nuoK
+92	yadE	yphF
+93	ybgC	glcF
+94	c5523	glcF
+95	ybbA	mdtM
+96	hcaA1	dcm
+97	yqgA	mdtM
+98	Z0040	ccmC
+99	ubiX	glcA
+100	yhdH	yncB
+
+ 
+ 
+
+Question 1.2
+DAVID tool and find all functional categories
+
+Sublist	Category	Term	RT	Genes	Count	%	P-Value	Benjamini
+	SP_PIR_KEYWORDS	cell membrane	RT		45	0.3	1.2E-15	2.1E-13
+	SP_PIR_KEYWORDS	membrane	RT		46	0.3	6.6E-15	6.2E-13
+	SP_PIR_KEYWORDS	cell inner membrane	RT		32	0.2	1.4E-13	8.5E-12
+	SP_PIR_KEYWORDS	transmembrane protein	RT		17	0.1	4.4E-12	2.0E-10
+	SP_PIR_KEYWORDS	transport	RT		34	0.3	5.5E-12	2.0E-10
+	SP_PIR_KEYWORDS	cytoplasm	RT		30	0.2	7.3E-12	2.2E-10
+	GOTERM_CC_FAT	organelle inner membrane	RT		25	0.2	1.2E-10	4.6E-9
+	GOTERM_CC_FAT	organelle envelope	RT		25	0.2	1.2E-10	4.6E-9
+	SP_PIR_KEYWORDS	hydrolase	RT		31	0.2	1.7E-10	4.6E-9
+	GOTERM_CC_FAT	organelle membrane	RT		25	0.2	2.0E-10	3.8E-9
+	SP_PIR_KEYWORDS	metal-binding	RT		26	0.2	4.0E-10	9.2E-9
+	INTERPRO	ABC transporter, phosphate import, PstB	RT		5	0.0	2.0E-9	7.6E-7
+	INTERPRO	Phosphate transport system permease protein 1	RT		5	0.0	2.0E-9	7.6E-7
+	GOTERM_CC_FAT	peptidoglycan-based cell wall	RT		29	0.2	8.7E-9	1.1E-7
+	GOTERM_MF_FAT	phosphate transmembrane-transporting ATPase activity	RT		5	0.0	8.8E-9	2.4E-6
+	SP_PIR_KEYWORDS	nucleotide-binding	RT		26	0.2	1.0E-8	2.1E-7
+	GOTERM_CC_FAT	cell wall	RT		29	0.2	1.2E-8	1.2E-7
+	SP_PIR_KEYWORDS	atp-binding	RT		24	0.2	9.2E-8	1.7E-6
+	SP_PIR_KEYWORDS	nucleotide binding	RT		9	0.1	1.0E-7	1.7E-6
+	SP_PIR_KEYWORDS	P-loop	RT		9	0.1	1.6E-7	2.4E-6
+	SP_PIR_KEYWORDS	ATP	RT		9	0.1	2.0E-7	2.9E-6
+	SP_PIR_KEYWORDS	phosphate transport	RT		5	0.0	2.1E-7	2.8E-6
+	SP_PIR_KEYWORDS	cell wall biogenesis/degradation	RT		7	0.1	7.1E-7	8.8E-6
+	SP_PIR_KEYWORDS	iron	RT		14	0.1	7.9E-7	9.1E-6
+	SP_PIR_KEYWORDS	transmembrane	RT		31	0.2	8.1E-7	8.8E-6
+	SP_PIR_KEYWORDS	transferase	RT		30	0.2	2.9E-6	3.0E-5
+	SP_PIR_KEYWORDS	cell shape	RT		6	0.0	6.4E-6	6.2E-5
+	GOTERM_MF_FAT	inorganic phosphate transmembrane transporter activity	RT		5	0.0	1.4E-5	2.0E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	2.3E-5	1.6E-2
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	2.7E-5	9.2E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	2.7E-5	9.2E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	2.7E-5	9.2E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	3.0E-5	7.0E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	3.0E-5	7.0E-3
+	GOTERM_MF_FAT	phosphate transmembrane transporter activity	RT		5	0.0	3.7E-5	3.4E-3
+	SP_PIR_KEYWORDS	peptidoglycan synthesis	RT		5	0.0	4.7E-5	4.3E-4
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	4.8E-5	8.3E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	4.8E-5	8.3E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	5.3E-5	7.2E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	5.5E-5	6.3E-3
+	INTERPRO	ABC transporter, conserved site	RT		11	0.1	5.5E-5	1.0E-2
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	5.7E-5	5.6E-3
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	6.2E-5	5.3E-3
+	GOTERM_BP_FAT	generation of precursor metabolites and energy	RT		17	0.1	6.3E-5	2.3E-2
+	KEGG_PATHWAY	ABC transporters	RT		10	0.1	7.5E-5	5.7E-3
+	GOTERM_CC_FAT	plasma membrane	RT		45	0.3	1.0E-4	7.6E-4
+	GOTERM_BP_FAT	phosphate transport	RT		5	0.0	1.1E-4	2.0E-2
+	GOTERM_BP_FAT	anaerobic respiration	RT		8	0.1	1.3E-4	1.5E-2
+	SP_PIR_KEYWORDS	lyase	RT		12	0.1	1.4E-4	1.2E-3
+	INTERPRO	ABC transporter-like	RT		11	0.1	1.5E-4	1.9E-2
+	GOTERM_BP_FAT	energy derivation by oxidation of organic compounds	RT		12	0.1	1.7E-4	1.5E-2
+	GOTERM_BP_FAT	cellular respiration	RT		11	0.1	2.8E-4	2.0E-2
+	SP_PIR_KEYWORDS	iron-sulfur	RT		9	0.1	3.1E-4	2.6E-3
+	GOTERM_MF_FAT	anion transmembrane-transporting ATPase activity	RT		5	0.0	3.2E-4	2.2E-2
+	KEGG_PATHWAY	ABC transporters	RT		9	0.1	3.4E-4	2.3E-2
+	GOTERM_BP_FAT	regulation of cell morphogenesis	RT		6	0.0	3.6E-4	2.2E-2
+	GOTERM_BP_FAT	regulation of cell shape	RT		6	0.0	3.6E-4	2.2E-2
+	GOTERM_MF_FAT	inorganic anion transmembrane transporter activity	RT		6	0.0	4.3E-4	2.3E-2
+	SP_PIR_KEYWORDS	phosphotransferase	RT		5	0.0	5.1E-4	4.1E-3
+	GOTERM_CC_FAT	external encapsulating structure	RT		31	0.2	5.5E-4	3.5E-3
+	SP_PIR_KEYWORDS	amino-acid biosynthesis	RT		7	0.1	6.1E-4	4.7E-3
+	UP_SEQ_FEATURE	chain:Phosphate import ATP-binding protein pstB	RT		3	0.0	7.4E-4	1.8E-1
+	GOTERM_MF_FAT	transition metal ion binding	RT		27	0.2	8.5E-4	3.8E-2
+	SP_PIR_KEYWORDS	carbohydrate metabolism	RT		6	0.0	8.6E-4	6.3E-3
+	GOTERM_BP_FAT	anion transport	RT		8	0.1	8.6E-4	4.4E-2
+	SP_PIR_KEYWORDS	carbon-oxygen lyase	RT		4	0.0	8.8E-4	6.2E-3
+	GOTERM_BP_FAT	nucleobase, nucleoside and nucleotide interconversion	RT		5	0.0	8.8E-4	3.9E-2
+	KEGG_PATHWAY	ABC transporters	RT		8	0.1	9.3E-4	5.7E-2
+	KEGG_PATHWAY	ABC transporters	RT		8	0.1	9.3E-4	5.7E-2
+	SP_PIR_KEYWORDS	cell cycle	RT		5	0.0	1.1E-3	7.3E-3
+	GOTERM_MF_FAT	ATPase activity, coupled	RT		11	0.1	1.2E-3	4.8E-2
+	GOTERM_MF_FAT	ATPase activity, coupled to transmembrane movement of ions	RT		6	0.0	1.3E-3	4.4E-2
+	GOTERM_CC_FAT	cytosol	RT		7	0.1	1.5E-3	8.1E-3
+	KEGG_PATHWAY	ABC transporters	RT		8	0.1	1.6E-3	9.0E-2
+	GOTERM_MF_FAT	ATPase activity, coupled to transmembrane movement of substances	RT		9	0.1	1.8E-3	5.3E-2
+	GOTERM_MF_FAT	ATPase activity, coupled to movement of substances	RT		9	0.1	1.8E-3	5.3E-2
+	SP_PIR_KEYWORDS	oxidoreductase	RT		15	0.1	1.9E-3	1.2E-2
+	KEGG_PATHWAY	ABC transporters	RT		8	0.1	2.0E-3	1.0E-1
+	GOTERM_MF_FAT	ATPase activity	RT		15	0.1	2.1E-3	5.7E-2
+	GOTERM_MF_FAT	P-P-bond-hydrolysis-driven transmembrane transporter activity	RT		9	0.1	2.2E-3	5.3E-2
+	GOTERM_MF_FAT	primary active transmembrane transporter activity	RT		9	0.1	2.2E-3	5.3E-2
+	SP_PIR_KEYWORDS	zinc	RT		8	0.1	2.4E-3	1.5E-2
+	GOTERM_BP_FAT	inorganic anion transport	RT		6	0.0	2.4E-3	9.3E-2
+	GOTERM_BP_FAT	aerobic respiration	RT		6	0.0	2.5E-3	8.7E-2
+	GOTERM_MF_FAT	hydrolase activity, acting on acid anhydrides, catalyzing transmembrane movement of substances	RT		9	0.1	2.6E-3	5.7E-2
+	GOTERM_CC_FAT	envelope	RT		28	0.2	2.7E-3	1.3E-2
+	UP_SEQ_FEATURE	nucleotide phosphate-binding region:ATP	RT		17	0.1	2.7E-3	3.1E-1
+	GOTERM_BP_FAT	aminoglycan biosynthetic process	RT		5	0.0	2.7E-3	8.6E-2
+	GOTERM_BP_FAT	glycosaminoglycan biosynthetic process	RT		5	0.0	2.7E-3	8.6E-2
+	GOTERM_BP_FAT	peptidoglycan biosynthetic process	RT		5	0.0	2.7E-3	8.6E-2
+	GOTERM_MF_FAT	purine ribonucleotide binding	RT		28	0.2	3.0E-3	6.1E-2
+	GOTERM_MF_FAT	ribonucleotide binding	RT		28	0.2	3.0E-3	6.1E-2
+	GOTERM_BP_FAT	cell wall macromolecule biosynthetic process	RT		5	0.0	3.1E-3	9.0E-2
+	GOTERM_BP_FAT	cellular component macromolecule biosynthetic process	RT		5	0.0	3.1E-3	9.0E-2
+	GOTERM_BP_FAT	cellular cell wall macromolecule metabolic process	RT		5	0.0	3.3E-3	8.7E-2
+	GOTERM_BP_FAT	cell cycle	RT		6	0.0	3.3E-3	8.3E-2
+	UP_SEQ_FEATURE	mutagenesis site	RT		15	0.1	3.4E-3	2.6E-1
+	SP_PIR_KEYWORDS	monomer	RT		3	0.0	3.6E-3	2.2E-2
+	GOTERM_MF_FAT	metal ion binding	RT		31	0.2	3.7E-3	7.0E-2
+	SP_PIR_KEYWORDS	cell division	RT		5	0.0	4.0E-3	2.4E-2
+	GOTERM_BP_FAT	peptidoglycan metabolic process	RT		7	0.1	4.2E-3	9.7E-2
+	GOTERM_BP_FAT	glycosaminoglycan metabolic process	RT		7	0.1	4.2E-3	9.7E-2
+	GOTERM_BP_FAT	peptidoglycan-based cell wall biogenesis	RT		5	0.0	4.3E-3	9.3E-2
+	GOTERM_BP_FAT	cell wall biogenesis	RT		5	0.0	4.3E-3	9.3E-2
+	UP_SEQ_FEATURE	domain:ABC transporter	RT		7	0.1	4.3E-3	2.5E-1
+	GOTERM_BP_FAT	phosphorus metabolic process	RT		10	0.1	4.4E-3	9.0E-2
+	SP_PIR_KEYWORDS	pyruvate	RT		4	0.0	4.5E-3	2.6E-2
+	SP_PIR_KEYWORDS	magnesium	RT		7	0.1	4.5E-3	2.5E-2
+	SP_PIR_KEYWORDS	ionic channel	RT		3	0.0	4.5E-3	2.4E-2
+	GOTERM_BP_FAT	aminoglycan metabolic process	RT		7	0.1	4.7E-3	9.1E-2
+	SP_PIR_KEYWORDS	electron transport	RT		5	0.0	5.1E-3	2.7E-2
+	SP_PIR_KEYWORDS	4fe-4s	RT		6	0.0	5.3E-3	2.7E-2
+	SP_PIR_KEYWORDS	inner membrane	RT		3	0.0	5.5E-3	2.7E-2
+	INTERPRO	ATPase, AAA+ type, core	RT		11	0.1	5.6E-3	4.1E-1
+	GOTERM_MF_FAT	cation binding	RT		31	0.2	5.7E-3	9.9E-2
+	GOTERM_MF_FAT	iron ion binding	RT		14	0.1	6.0E-3	9.8E-2
+	GOTERM_MF_FAT	ion binding	RT		31	0.2	6.1E-3	9.5E-2
+	GOTERM_MF_FAT	anion transmembrane transporter activity	RT		6	0.0	6.5E-3	9.4E-2
+	GOTERM_BP_FAT	ion transport	RT		14	0.1	6.6E-3	1.2E-1
+	SP_PIR_KEYWORDS	DNA binding	RT		5	0.0	6.7E-3	3.2E-2
+	SP_PIR_KEYWORDS	sugar transport	RT		6	0.0	7.2E-3	3.4E-2
+	GOTERM_MF_FAT	purine nucleotide binding	RT		29	0.2	7.5E-3	1.0E-1
+	GOTERM_CC_FAT	extrinsic to membrane	RT		8	0.1	7.5E-3	3.1E-2
+	GOTERM_BP_FAT	cell wall organization	RT		7	0.1	8.8E-3	1.5E-1
+	SP_PIR_KEYWORDS	phosphoprotein	RT		6	0.0	9.3E-3	4.2E-2
+	GOTERM_MF_FAT	ATP binding	RT		25	0.2	9.5E-3	1.2E-1
+	GOTERM_MF_FAT	adenyl ribonucleotide binding	RT		25	0.2	9.8E-3	1.2E-1
+	SP_PIR_KEYWORDS	transport protein	RT		3	0.0	1.0E-2	4.6E-2
+	UP_SEQ_FEATURE	topological domain:Cytoplasmic	RT		26	0.2	1.2E-2	4.6E-1
+	GOTERM_BP_FAT	carbohydrate catabolic process	RT		11	0.1	1.2E-2	1.9E-1
+	SP_PIR_KEYWORDS	coenzyme A	RT		3	0.0	1.3E-2	5.6E-2
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.4E-2	4.9E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.4E-2	4.9E-1
+	GOTERM_BP_FAT	external encapsulating structure organization	RT		7	0.1	1.4E-2	2.1E-1
+	GOTERM_MF_FAT	nucleoside binding	RT		27	0.2	1.5E-2	1.7E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.5E-2	5.0E-1
+	GOTERM_BP_FAT	nitrogen compound biosynthetic process	RT		16	0.1	1.6E-2	2.2E-1
+	SP_PIR_KEYWORDS	heme biosynthesis	RT		2	0.0	1.8E-2	7.4E-2
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.8E-2	5.4E-1
+	KEGG_PATHWAY	Peptidoglycan biosynthesis	RT		3	0.0	1.8E-2	5.4E-1
+	PIR_SUPERFAMILY	PIRSF002759:inner membrane protein MalK	RT		4	0.0	1.9E-2	9.3E-1
+	INTERPRO	Hexapeptide transferase, conserved site	RT		3	0.0	2.0E-2	7.8E-1
+	SP_PIR_KEYWORDS	Acyltransferase	RT		5	0.0	2.1E-2	8.5E-2
+	SP_PIR_KEYWORDS	periplasm	RT		5	0.0	2.2E-2	8.7E-2
+	GOTERM_MF_FAT	adenyl nucleotide binding	RT		26	0.2	2.2E-2	2.3E-1
+	GOTERM_MF_FAT	purine nucleoside binding	RT		26	0.2	2.2E-2	2.3E-1
+	SP_PIR_KEYWORDS	ion transport	RT		5	0.0	2.3E-2	8.8E-2
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.4E-2	6.3E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.4E-2	6.3E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.4E-2	6.3E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.4E-2	6.3E-1
+	GOTERM_MF_FAT	ion channel activity	RT		3	0.0	2.6E-2	2.6E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.6E-2	6.4E-1
+	GOTERM_BP_FAT	electron transport chain	RT		7	0.1	2.7E-2	3.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.8E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.8E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	2.8E-2	6.4E-1
+	GOTERM_MF_FAT	substrate specific channel activity	RT		3	0.0	2.8E-2	2.7E-1
+	COG_ONTOLOGY	Posttranslational modification, protein turnover, chaperones	RT		4	0.0	2.9E-2	3.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	3.0E-2	6.5E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	3.0E-2	6.5E-1
+	GOTERM_BP_FAT	cell wall macromolecule metabolic process	RT		6	0.0	3.0E-2	3.6E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.1E-2	6.4E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	3.1E-2	6.3E-1
+	KEGG_PATHWAY	Cysteine and methionine metabolism	RT		3	0.0	3.1E-2	6.3E-1
+	KEGG_PATHWAY	Ribosome	RT		4	0.0	3.3E-2	6.3E-1
+	KEGG_PATHWAY	Ribosome	RT		4	0.0	3.3E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.3E-2	6.3E-1
+	GOTERM_BP_FAT	monosaccharide metabolic process	RT		10	0.1	3.3E-2	3.8E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.4E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.4E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.4E-2	6.3E-1
+	KEGG_PATHWAY	Ribosome	RT		4	0.0	3.4E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.4E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.5E-2	6.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.6E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.6E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.6E-2	6.2E-1
+	GOTERM_MF_FAT	nucleotide binding	RT		30	0.2	3.7E-2	3.2E-1
+	SP_PIR_KEYWORDS	Redox-active center	RT		3	0.0	3.7E-2	1.4E-1
+	UP_SEQ_FEATURE	topological domain:Periplasmic	RT		24	0.2	3.7E-2	8.1E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.7E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.7E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.7E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.8E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.8E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.8E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.8E-2	6.2E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	3.8E-2	6.2E-1
+	GOTERM_BP_FAT	cell division	RT		5	0.0	3.9E-2	4.1E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	3.9E-2	6.1E-1
+	SP_PIR_KEYWORDS	s-adenosyl-l-methionine	RT		4	0.0	4.0E-2	1.4E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	4.0E-2	6.1E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	4.0E-2	6.1E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	4.0E-2	6.1E-1
+	SP_PIR_KEYWORDS	glycosyltransferase	RT		4	0.0	4.2E-2	1.5E-1
+	SMART	AAA	RT		11	0.1	4.2E-2	6.8E-1
+	INTERPRO	Thioredoxin fold	RT		4	0.0	4.2E-2	9.3E-1
+	KEGG_PATHWAY	Purine metabolism	RT		4	0.0	4.2E-2	6.2E-1
+	SP_PIR_KEYWORDS	purine nucleotide biosynthesis	RT		2	0.0	4.2E-2	1.5E-1
+	SP_PIR_KEYWORDS	metalloprotein	RT		3	0.0	4.2E-2	1.5E-1
+	SP_PIR_KEYWORDS	nad	RT		5	0.0	4.6E-2	1.5E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	4.8E-2	6.5E-1
+	GOTERM_BP_FAT	heme biosynthetic process	RT		2	0.0	4.8E-2	4.7E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.0E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.0E-2	6.6E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.0E-2	6.6E-1
+	GOTERM_BP_FAT	glycerol metabolic process	RT		3	0.0	5.1E-2	4.8E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	KEGG_PATHWAY	Oxidative phosphorylation	RT		3	0.0	5.2E-2	6.6E-1
+	SP_PIR_KEYWORDS	dna-directed rna polymerase	RT		2	0.0	5.2E-2	1.7E-1
+	SP_PIR_KEYWORDS	pyridoxal phosphate	RT		4	0.0	5.3E-2	1.7E-1
+	SP_PIR_KEYWORDS	signal	RT		11	0.1	5.3E-2	1.7E-1
+	INTERPRO	N-acetylmuramoyl-L-alanine amidase, family 2	RT		2	0.0	5.3E-2	9.5E-1
+	GOTERM_MF_FAT	channel activity	RT		3	0.0	5.4E-2	4.3E-1
+	GOTERM_MF_FAT	passive transmembrane transporter activity	RT		3	0.0	5.4E-2	4.3E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.5E-2	6.7E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.5E-2	6.7E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.5E-2	6.7E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.7E-2	6.8E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.7E-2	6.8E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.7E-2	6.8E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.9E-2	6.8E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	5.9E-2	6.8E-1
+	GOTERM_MF_FAT	zinc ion binding	RT		10	0.1	6.0E-2	4.5E-1
+	GOTERM_BP_FAT	amine biosynthetic process	RT		9	0.1	6.0E-2	5.3E-1
+	GOTERM_BP_FAT	protein complex biogenesis	RT		4	0.0	6.1E-2	5.2E-1
+	GOTERM_BP_FAT	protein complex assembly	RT		4	0.0	6.1E-2	5.2E-1
+	KEGG_PATHWAY	Arginine and proline metabolism	RT		3	0.0	6.2E-2	6.9E-1
+	UP_SEQ_FEATURE	region of interest:Linker	RT		2	0.0	6.2E-2	9.1E-1
+	GOTERM_BP_FAT	macromolecular complex assembly	RT		4	0.0	6.2E-2	5.2E-1
+	GOTERM_BP_FAT	polysaccharide metabolic process	RT		10	0.1	6.2E-2	5.1E-1
+	GOTERM_BP_FAT	cell redox homeostasis	RT		4	0.0	6.3E-2	5.0E-1
+	SP_PIR_KEYWORDS	2Fe-2S	RT		3	0.0	6.6E-2	2.0E-1
+	KEGG_PATHWAY	Amino sugar and nucleotide sugar metabolism	RT		3	0.0	6.7E-2	7.1E-1
+	GOTERM_MF_FAT	metal cluster binding	RT		10	0.1	6.8E-2	4.9E-1
+	GOTERM_MF_FAT	iron-sulfur cluster binding	RT		10	0.1	6.8E-2	4.9E-1
+	GOTERM_BP_FAT	carbohydrate biosynthetic process	RT		9	0.1	6.8E-2	5.2E-1
+	GOTERM_BP_FAT	cytochrome complex assembly	RT		3	0.0	6.8E-2	5.1E-1
+	KEGG_PATHWAY	Amino sugar and nucleotide sugar metabolism	RT		3	0.0	7.2E-2	7.2E-1
+	INTERPRO	Bacterial transferase hexapeptide repeat	RT		3	0.0	7.3E-2	9.7E-1
+	GOTERM_BP_FAT	phosphate metabolic process	RT		7	0.1	7.4E-2	5.3E-1
+	GOTERM_MF_FAT	transferase activity, transferring alkyl or aryl (other than methyl) groups	RT		4	0.0	7.4E-2	5.1E-1
+	SMART	Ami_2	RT		2	0.0	7.6E-2	6.6E-1
+	PIR_SUPERFAMILY	PIRSF036629:sensor diguanylate cyclase/c-di-GMP phosphodiesterase	RT		2	0.0	7.7E-2	1.0E0
+	KEGG_PATHWAY	Amino sugar and nucleotide sugar metabolism	RT		3	0.0	7.7E-2	7.4E-1
+	SP_PIR_KEYWORDS	carboxy-lyase	RT		2	0.0	7.9E-2	2.3E-1
+	SP_PIR_KEYWORDS	binding protein-dependent transport system	RT		2	0.0	7.9E-2	2.3E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	7.9E-2	7.4E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	7.9E-2	7.4E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	7.9E-2	7.4E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	7.9E-2	7.4E-1
+	GOTERM_MF_FAT	oxidoreductase activity, acting on sulfur group of donors	RT		4	0.0	8.0E-2	5.2E-1
+	GOTERM_BP_FAT	heme metabolic process	RT		2	0.0	8.1E-2	5.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	KEGG_PATHWAY	Pyrimidine metabolism	RT		3	0.0	8.2E-2	7.5E-1
+	SP_PIR_KEYWORDS	cytochrome c-type biogenesis	RT		2	0.0	8.2E-2	2.4E-1
+	GOTERM_BP_FAT	polysaccharide biosynthetic process	RT		8	0.1	8.5E-2	5.6E-1
+	GOTERM_BP_FAT	macromolecular complex subunit organization	RT		4	0.0	9.0E-2	5.7E-1
+	SP_PIR_KEYWORDS	ligase	RT		4	0.0	9.1E-2	2.6E-1
+	GOTERM_BP_FAT	cellular amino acid biosynthetic process	RT		8	0.1	9.2E-2	5.7E-1
+	KEGG_PATHWAY	Glycerolipid metabolism	RT		2	0.0	9.5E-2	7.9E-1
+	GOTERM_BP_FAT	sulfur amino acid biosynthetic process	RT		3	0.0	9.5E-2	5.8E-1
+	PIR_SUPERFAMILY	PIRSF000371:pyruvate formate-lyase activating enzyme with radical SAM domain, YjjW type	RT		2	0.0	9.5E-2	9.9E-1
+	GOTERM_BP_FAT	organophosphate metabolic process	RT		4	0.0	9.8E-2	5.8E-1
+	GOTERM_BP_FAT	cellular protein complex assembly	RT		3	0.0	9.9E-2	5.8E-1
+	SP_PIR_KEYWORDS	disulfide bond	RT		3	0.0	1.0E-1	2.8E-1
+
+
+Question 2.1
+
+S1: AAAATCGATCAAATCAT
+S2: AATCTCGATCAATTCAT
+S3: ATATTCGATAAATTAAT
+
+
+S1 and S2: 3/17.
+d_jc=  = -3/4  ln⁡(1-4/3*3/17)= 0.2012
+
+S1 and S3:  5/17
+d_jc= -3/4  ln⁡(1-4/3*5/17)=0.3734
+	
+S2 and S3:  5/17
+d_jc= -3/4  ln⁡(1-4/3*5/17)=0.3734
+
+S1 is closer to S2 than S3 while S3 is far from S1 because the juke cantor scores are closely related to their lower scores.
+
+
+
+Question 2.2
+Assumptions: 
+
+The sequences are optimally aligned with constant and uniform mutations. 
+
+An indel makes a Jukes –Cantor unreliable and it is no longer an optimal alignment for the sequences.
+
+So, The Jukes-Cantor distance would be:
+d_jc= -3/4  ln⁡(1-4/3*7/10) = 2.03104
+
+
+Question 2.3
+No, 
+
+rat->cat = 8 
+
+rat->dog + dog->cat = 5 + 2 = 7
+
+This is not an ultrametric matrix because 3 point rule cannot work.
+A = Human B = Mouse C = Rat D = Dog E = Cat
+	A	B	C	D	E
+A	0	3	5	10	11
+B		0	2	7	8
+C			0	5	8
+D				0	2
+E					0
+
+	A	BC	D	E
+A	0	4	10	11
+BC		0	6	8
+D			0	2
+E				0
+
+	A	BC	DE
+A	0	4	10.5
+BC		0	7
+DE			0
+
+	ABC	DE
+ABC	0	8.167
+DE		0
+
+
+Question 2.4
+This is not an ultra-metric distance matrix because it doesn’t meet the requirement for the multiple organisms.
+
+ 
+
+BONUS
+Question 3.1
+3.1.
+k=5
+a)	1607276_at	1606775_at		1607699_at
+	1606690_at	1607577_at		1606506_a_at
+	1607130_at	1606439_s_at	1607148_s_at
+	1607509_at	1606564_at		1608212_at
+	1608204_at	1608120_at		1607816_at
+b)	1607276_at	1606690_at	1607130_at	1607509_at	1608204_at
+c)	403	578	213	244	560
+k=10
+a)	1608332_at	1608379_at		1606627_at
+	1607658_at	1608119_at		1607297_at
+	1608008_at	1606802_at		1606812_at
+	1607350_at	1606908_at		1607040_at
+	1607418_at	1607265_at		1607577_at
+	1607521_at	1607039_at		1607480_at
+	1606692_at	1606611_at		1607311_at
+	1607691_at	1607517_at		1608330_at
+	1606603_at	1606439_s_at	1607102_at
+	1606801_at	1608319_at		1606475_at
+b)	1608332_at	1607658_at	1606802_at	1607350_at	1607577_at
+	1607521_at	1606692_at	1607691_at	1606603_at	1606801_at
+c)	144 162 144 45 440 210 328 106 147 272
+k=20
+a)	1606782_x_at	1608165_at		1607204_at
+	1607919_x_at	1606863_at		1608119_at
+	1608184_at		1608153_at		1608110_at
+	1607649_at		1607577_at		1608013_at
+	1606812_at		1607292_s_at	1607462_at
+	1608281_at		1607128_at		1607480_at
+	1608104_at		1608212_at		1606434_at
+	1606692_at		1606611_at		1606763_at
+	1607487_at		1607691_at		1608330_at
+	1607639_s_at	1606865_at		1607977_at
+	1608008_at		1607539_at		1606857_at
+	1608332_at		1607618_at
+	1608319_at		1606475_at		1606801_at
+	1607297_at		1607226_at
+	1608374_at		1607298_a_at	1607147_at
+	1606603_at		1606486_at		1607870_at
+	1608177_at		1606862_at		1608242_at
+	1607350_at		1607040_at		1606908_at
+	1608407_at		1606627_at
+	1607897_at		1608115_at		1607770_at
+b)	1606782_x_at	1607919_x_at	1608184_at	1607577_at	1606812_at	1608281_at	1608212_at	1606611_at	1607487_at	1607639_s_at
+	1608008_at		1608332_at		1606475_at	1607297_at	1608374_at	1606603_at	1608177_at	1607350_at	1606627_at	1607897_at
+c)	59 78 124 308 41 153 72 238 79 84 57 80 183 42 118 77 48 27 80 50
+
+
+Question 3.2
+ 
+Question 3.3
+k = 5
+BIC = -11656.49
+ 
+
+
