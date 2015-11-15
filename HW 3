@@ -1,0 +1,330 @@
+ECS124 LAB 3
+
+EXERCISE 1
+
+2.12
+Write reg exp that defines the E Coli consensus promoter sequence 
+TTGACA followed by any 18 DNA nucleotides (A,T,C, or G) followed by TATATT
+
+TTGACA[ATCG]{18}TATATT
+
+2.13
+Write a reg exp that matches the consensus promoter sequence or specific lactose promoter sequence
+
+lactose TTTACA[ATCG]{18}TATGTT
+consensus TTGACA[ATCG]{18}TATATT
+
+#!/pkg/bin/perl-w
+
+(TTTACA[ATCG]{18}TATGTT) | (TTGACA[ATCG]{18}TATATT)
+
+print "Input string";
+$line1 = <>;
+print "It matches lactose or consensus \n" if $line1 =~ m/(TTTACA[ATCG]{18}TATGTT) | (TTGACA[ATCG]{18}TATATT)/;
+
+
+EXERCISE 2
+
+2.1
+What scores and statistics does BLAST use? What does each one mean and 
+how is it calculated? 
+
+The P-value is used to indicate significance in global sequence comparisions.
+
+Gapped alignments rely on pre-estimation parameters lambda and K.
+
+For local sequence, we can also look at HSP scores. The equation: E = Kmn*e^(-lambda*s) with M and N are sequence lengths.
+K and Lambda are natural scales for search space. The E value decreases exponentially with score. The score is 
+normalized with: S'= (lambda*S*ln(k))/(ln(2))
+
+We plug this into the E value: E=m*n*2^(-S)
+
+Using the HSP score from above, we can find the p-value through: (e^(-E))*(E^(a)/a!))
+and P=1-e^-E
+
+2.2
+What is the difference between BLAST, BLAST 2, PSI-BLAST, FASTA? When 
+should each of these been used (trade-offs?) 
+
+BLAST is basic local alignment search tool and is used to calculate the similarity of sequences and comparing primary sequence information
+BLAST has input nucleotide that's queried against a larger sequence. Variations exist in BLAST and often regarded as slower 
+but has better resulsts for higher scores of matching. 
+
+BLAST2 is similar to BLAST but can have gaps. Used to search for homologous sequences in nucleotide and protein databases.  BLAST2 utilizes the BLAST algorithm for DNA-DNA or protein-protein sequence comparison.    
+
+PSI-Blast is Position-Specific Iterated BLAST and a more specialized BLAST sequence for using protein queries to find other members of the same protein family.  The trade-off is the focus on proteins and not on other types of entities. 
+
+FASTA is DNA and protein sequence alignment. It primarily uses local alignments to find matches and is faster but results may not be as good.  
+The differences are that for closely matched sequences Blast is very accurate and for dissimilar  sequence Fasta is better software. Blast also uses FASTA input to get the output and can be slower compared to FASTA.
+
+2.3
+Explain what is the p-value for the top match of the following query (that
+actually comes from the movie Jurassic Park): 
+Go through the calculations and see if the p-value matches the one reported by 
+BLAST. If you have to make any assumptions please state them explicitly.  
+
+As we saw from earlier, the P-Value is used to find the probability of a HSP.
+  
+P=1-e^(-E)
+
+When the E=Value is less than 0.01, the scores are approximately the same. Also, the E-Values are generally more readable compared to P-Values.  
+
+From the calculations on the DinoDNA the E-Value is less than 0.01 and converts to a P-value which is almost 0.  This would indicate that the matching randomly probability is close to none and that it's statisically significant.  
+
+The P-Value is not reported as the E-Value is the one that is reported.  
+
+
+EXERCISE 3
+
+print "Input filename \n";
+$queryfile = <>; # Query file
+
+open(IN, "$queryfile");
+open(DATA,"perlblastdata.txt");
+
+# Part 1 - 3:  Scanning in Query with K-Mer length 4
+
+print "Which K-value do you prefer? \n";
+$k = <>;
+chomp $k;
+
+print "Which T-Threshold do you prefer? \n";
+$thresh = <>;
+chomp $thresh;
+
+
+
+$/="";
+
+$query = <IN>;
+
+chomp $query; # Remove New Line Character
+
+$queryFull = $query; # To read in the query
+
+# $k = 4; # Assigning 4 to k-mer
+# $thresh = 7;
+
+
+%kmer = ();                      
+$i = 0;							
+while (length($query) >= $k) {
+    $query =~ m/(.{$k})/;
+    # print "$1, $i \n"; Unnecessary test line
+    if (! defined $kmer{$1}) {     #defined is a function that returns true
+        # if a value has already been assigned to
+        # $kmer{$1}, otherwise it returns false.
+        # the ! character is the negation, so
+        # if $kmer{$1} has no value, then it will
+        # be assigned the value of $i, the position
+        # where the k-mer is first found.
+        $kmer{$1} = $i;
+    }
+    
+    else { push (@{$kmer{$1}}, $i)}
+    # Part 7 Addition
+        
+    $i++;
+    $query = substr($query, 1, length($query) - 1);
+}
+
+# foreach $kmerkey (keys(%kmer)) {
+# print OUT "The first occurrence of string $kmerkey is in position
+# $kmer{$kmerkey}\n";
+# }
+
+#Part 4 - 7
+
+$/="";
+
+$LINdex = 1;
+
+%HSP = ();
+
+$databaseI = 0;
+# Initializes Index
+
+$HSPcounter = 0;
+while ($dat  = <DATA>) { # Searches through the DATA file
+	chomp $dat;
+    
+	$inpFull = $dat;
+    
+	$inpLength = length($dat);
+    
+	$i = 1;
+    
+    $HSPlen = length(@{$kmer{$match}}; )
+    
+    
+	while (length($dat)>= $k) {
+		$dat =~ m/(.{$k})/;
+		$match = $1;
+		
+#Search left and right
+        
+		if (defined $kmer{$match}) {  # Searches for the Matches only
+            $x = 0;
+            
+            $j = $k;
+            
+			$queryPos = $kmer{$match};
+                        
+			$querS = substr($queryFull, $queryPos, 4); # Finds substrings within the full query of position 4
+            
+			$subS = substr($inpFull, $i-1, 4);
+            
+#left search
+            
+            while (($x <= $i) && ($x <= $queryPos)) {
+                $subS = substr($inpFull, $i-$x, $j+$x);
+                
+                $querS = substr($inpFull, $queryPos - $x, $j+$x);
+                #
+                if ($querS =~m/$subS/) {
+                    
+                }
+                else {
+                    last;
+                }
+                $x++;
+            }
+            
+#right search
+            
+			while ($j <= ($inpLength - $i+1) && ($x <= $queryPos)) { # Searches RIGHT
+				if ($querS =~ m/$subS/) {
+                    
+                    
+                }
+                
+                else {
+                    last;
+                }
+                
+                $j++; # Iterates the J
+                
+                $subS = substr($inpFull, $i-1, $j);
+                
+                $querS = substr($queryFull, $queryPos, $j);
+                
+            }             
+    # K-Mer Secondary Array (Part 5):
+            
+            while ($HSPcount <= $HSPlen){
+                
+                $queryPos = pop(@{$kmer{$match}}); 
+#This obtains required query items from pushed array.  
+                
+                $querS = substr($queryFull, $queryPos, 4); # Finds substrings within the full query of position 4
+                
+                $subS = substr($inpFull, $i-1, 4);
+            }
+#repetition HSP prevention            
+            while (($x <= $i) && ($x <= $queryPos)) {
+                
+                $querS = substr($queryFull, $queryPos, 4); # Finds substrings within the full query of position 4
+                
+                $subS = substr($inpFull, $i-1, 4);
+                
+                if ($j > $thresh) {
+                    
+                    # This only accounts for threshold
+                    $len = $j + $x;
+                    $loc = ($databaseI+1) - $x;
+                    # Required to start at position 1 of database (offset)
+                    
+                    if (! defined $HSP{$loc}) {
+                        $HSP{$loc} = $subS;
+						print OUT "HSP Found at $loc in the database with length $len and has sequence $subS\n";                        
+                    }
+                }
+                
+                else {
+                    last;
+                }
+            }
+            
+        } 
+        $i++;
+        $ databaseI++;
+        $dat = substr($dat, 1, length($dat) - 1);
+        
+    } 
+    
+    $LINdex++;
+        
+} 
+
+close(IN);
+close(DATA);
+
+Output: K-Mer: 3; T-Threshold: 5
+HSP Found at 388 in the database with length 5 and has sequence vlash
+HSP Found at 409 in the database with length 7 and has sequence steelrv
+HSP Found at 410 in the database with length 6 and has sequence teelrv
+HSP Found at 411 in the database with length 5 and has sequence eelrv
+HSP Found at 429 in the database with length 7 and has sequence lrvlash
+HSP Found at 430 in the database with length 6 and has sequence rvlash
+HSP Found at 431 in the database with length 5 and has sequence vlash
+HSP Found at 537 in the database with length 5 and has sequence vlash
+HSP Found at 606 in the database with length 37 and has sequence didyoseeasteelrvlashorwasitaflagthere
+HSP Found at 607 in the database with length 36 and has sequence idyoseeasteelrvlashorwasitaflagthere
+HSP Found at 608 in the database with length 35 and has sequence dyoseeasteelrvlashorwasitaflagthere
+HSP Found at 609 in the database with length 34 and has sequence yoseeasteelrvlashorwasitaflagthere
+HSP Found at 610 in the database with length 33 and has sequence oseeasteelrvlashorwasitaflagthere
+HSP Found at 611 in the database with length 32 and has sequence seeasteelrvlashorwasitaflagthere
+HSP Found at 612 in the database with length 31 and has sequence eeasteelrvlashorwasitaflagthere
+HSP Found at 613 in the database with length 30 and has sequence easteelrvlashorwasitaflagthere
+HSP Found at 614 in the database with length 29 and has sequence asteelrvlashorwasitaflagthere
+HSP Found at 615 in the database with length 28 and has sequence steelrvlashorwasitaflagthere
+HSP Found at 616 in the database with length 27 and has sequence teelrvlashorwasitaflagthere
+HSP Found at 617 in the database with length 26 and has sequence eelrvlashorwasitaflagthere
+HSP Found at 618 in the database with length 25 and has sequence elrvlashorwasitaflagthere
+HSP Found at 619 in the database with length 24 and has sequence lrvlashorwasitaflagthere
+HSP Found at 620 in the database with length 23 and has sequence rvlashorwasitaflagthere
+HSP Found at 621 in the database with length 22 and has sequence vlashorwasitaflagthere
+HSP Found at 622 in the database with length 21 and has sequence lashorwasitaflagthere
+HSP Found at 623 in the database with length 20 and has sequence ashorwasitaflagthere
+HSP Found at 624 in the database with length 19 and has sequence shorwasitaflagthere
+HSP Found at 625 in the database with length 18 and has sequence horwasitaflagthere
+HSP Found at 626 in the database with length 17 and has sequence orwasitaflagthere
+HSP Found at 627 in the database with length 16 and has sequence rwasitaflagthere
+HSP Found at 628 in the database with length 15 and has sequence wasitaflagthere
+HSP Found at 629 in the database with length 14 and has sequence asitaflagthere
+HSP Found at 630 in the database with length 13 and has sequence sitaflagthere
+HSP Found at 631 in the database with length 12 and has sequence itaflagthere
+HSP Found at 632 in the database with length 11 and has sequence taflagthere
+HSP Found at 633 in the database with length 10 and has sequence aflagthere
+HSP Found at 634 in the database with length 9 and has sequence flagthere
+HSP Found at 635 in the database with length 8 and has sequence lagthere
+HSP Found at 636 in the database with length 7 and has sequence agthere
+HSP Found at 637 in the database with length 6 and has sequence gthere
+HSP Found at 638 in the database with length 5 and has sequence there
+
+
+EXERCISE 4
+
+4.1
+top 100 gene	fold change	p-value
+NFIC		0.0505591	0.7844
+GNA11		0.239663	0.89745
+DOHH		1.106		0.60735
+RAB11B		1.31026	1
+C19orf77	2.51538	0.4981
+S1PR4		-8.09913	0.2309
+TLE2		-1.92814	0.19965
+NCLN		-1.50607	0.25005
+GNA15		-0.743176	0.7877
+CIRBP		-0.689737	1
+AES		-0.00466113	0.8115
+
+
+
+
+
+
+
+
+
+
