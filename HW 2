@@ -1,0 +1,416 @@
+Exercise 2
+#!/pkg/bin/perl -w
+#This is the Needleman-Wunsch global alignment algorithm without gaps 
+#in the model and
+#with match value = 1, and mismatch and indel value = -1.
+#dg
+open (OUT, '> outer');         #Open a file called 'outer' for outputing.
+print "Input string 1 \n";
+$line = <>;
+chomp $line;
+@string1 =  split(//, $line);  #split up the line into individual characters
+                               #and place the characters into a list, whose
+                               #first index is 0 (here Perl has inherited
+                               #one of the worst features of C) See Johnson
+                               # 4.3 for an introduction to lists.  Look up
+                               # split in the index and read it.
+
+print "Input string 2 \n";
+$line = <>;
+chomp $line;
+@string2 =  split(//, $line);
+
+$n = @string1;                 #assigning a list to a scalar just assigns the
+                               #number of elements in the list to the scalar.
+$m = @string2;
+
+print "Please input match value, V \n";
+$val1 = <>; 
+chomp $val1;
+
+print "Please input mismatch cost, Cm \n";
+$val2 = <>; 
+chomp $val2;
+
+print "Please input indel cost, Im \n";
+$val3 = <>; 
+chomp $val3;
+
+print "The lengths of the two strings are $n, $m \n";   # Just to make sure this works.
+
+$V[0][0] = 0;                  # Assign the 0,0 entry of the V matrix
+
+for ($i = 1; $i <= $n; $i++) { # Assign the column 0  values and print 
+                               # String 1  See section 5.2 of Johnson
+                               # for loops
+   $V[$i][0] = $val3 * $i;		
+   print OUT "$string1[$i-1]";  # Note the -1 here because array indexes start at 0 (ug!)
+}
+   print OUT "\n\n";
+
+for ($j = 1; $j <= $m; $j++) { # Assign the row 0 values and print String 2
+   $V[0][$j] = $val3 * $j;
+   print OUT "$string2[$j-1]";
+}
+
+for ($i = 1; $i <= $n; $i++) {      # follow the recurrences to fill in the V matrix.
+ for ($j = 1; $j <= $m; $j++) {
+#   print OUT "$string1[$i-1], $string2[$j-1]\n"; # This is here  for debugging purposes.
+   if ($string1[$i-1] eq $string2[$j-1]) {
+     $t = $val1; } #is this where the match occurs
+   else {
+   $t = $val2;  #is this where the mismatch occurs
+   }
+
+  $max = $V[$i-1][$j-1] + $t;  
+#  print OUT "For $i, $j, t is $t \n"; # Another debugging line.
+  if ($max < $V[$i][$j-1] + $val3) {
+    $max = $V[$i][$j-1] + $val3;
+  }
+
+  if ($V[$i-1][$j] + $val3 > $max) {
+    $max = $V[$i-1][$j] + $val3;
+  }
+  $V[$i][$j] = $max; 
+ print OUT "V[$i][$j] has value $V[$i][$j]\n";
+  }
+}
+print OUT "\n The similarity value of the two strings is $V[$n][$m]\n";
+
+close(OUT);
+
+PART II
+Exercise 4
+4.1) 
+
+print "Input a string \n";
+$str1 = <>; 
+chomp $str1;
+
+if ($str1 =~ m/TA+GG/) { print "match \n"}
+else {print "no  match\n"}
+
+Example 1:
+Input a string
+ATATGGGA
+no match
+
+Example 2:
+Input a string 
+ATATAAAGGGA
+match
+
+print "Input a string \n";
+$str1 = <>; 
+chomp $str1;
+
+if ($str1 =~ m/TA*GG/) { print "match \n"}
+else {print "no match \n"}
+
+Example 1:
+Input a string
+ATATGGGA
+match
+logout
+
+Example 2:
+Input a string  
+ATATAAAGGGA
+match
+logout
+
+In this program, the use of + was for looking for a T that is followed by at least A and then two G. In the input string, there was a T but no A after. We can find the A after the two G’s which means that the substring was not there and thus creates a no match. For our 2nd sequence, the substring TAAAGG is a match and it happens at least one time. Thus we have a match. When we use the *, the occurrence has to happen zero or more instances so from the first example, it will be a match because it occurred zero times and for the second it will still be a match.
+
+4.2)
+ print "Input a string \n"; 
+$str1 = <>; 
+chomp $str1;
+
+if ($str1 =~ m/(TA)+GG/) { print "match \n"}
+else {print "no match\n"}
+
+4.3) 
+Part 1
+H(T | V | I )EL
+ 
+Part 2
+(H(T | V | I )EL) | ((K | R | H | Q | A)(D | E | N | Q)EL)
+
+Part 3
+print "Input a string \n";
+$str1 = <>; 
+chomp $str1;
+if ($str1 =~ m/H(T | V | I )EL | (K | R | H | Q | S |A)(D | E | N | Q)EL/) { print "yes match \n"}
+else {print "no match \n"}
+
+Part 4
+There are 72 motifs (3 x 6 x 4)
+
+4.4)
+UCU, UCC, UCA, UCG, AGU, AGC
+
+UC[UCAG] | AG[UC] | CG[ATCG]|AG[AG]
+
+UC[UCAG] | AG([UC]|[AG]) | CG[ATCG]
+
+CG[ATCG] | (UC | AG)[AGUC]
+
+
+4.5) 
+
+The script is only looking at a CA repetition and thus the {5} is disregarded so test case 1 is changed to X. In test case 2, the string has other repetitions within the CA repetition so the CA is not replaced. The test case 3 has CA repeated followed by a T so the X replaced the CA. Thus, we can see that if C or A is separated the program doesn’t change the CA to X. The program isn’t doing what we expect due to these occurences and the quantified repetition operator. 
+
+4.6) 
+No because the Genebank is a letter and 5 numbers or 2 letters and 6 numbers. The current expression is for a letter and 6 numbers or 2 letters and 5 numbers.
+
+4.7) /GCC[ATCG]{5}GGC/
+
+print "Input a string \n";
+$varstring = <>; 
+chomp $varstring;
+
+if($varstring =~ m/GCC[ATCG]{5}GGC/) {print "BGl1 is found\n";}
+else { print “BGl1 not found”;}
+
+Output:
+Input a string 
+DDDTEGCCATCGAGGC
+BGl1 is found
+
+4.14) (TA){2}[AT]A[AT]([CT]R){2}CARR
+
+Exercise 5
+5.1)
+print "Input file name\n";
+open (INFO, <>);  
+
+print "Input output file name \n";
+$outfile = <>;  
+open (OUTFO, "> $outfile"); 
+
+while ( $myline = <INFO>) {     
+$mystring = $myline;
+@find = $mystring =~ m/.*?ACCESSION .*?([A-Z]{1,2}\d{3,7})[ ,.;:?]/g;
+
+my $arrSize = @find;
+
+for(my $i = 0; $i < $arrSize; $i++) {
+print OUTFO "$find[$i] \n";
+}
+
+5.2) $file = 'testfile.txt';
+open (INFO, $file);
+$line = <INFO>;
+
+if ($line =~ m/(^| |=|>)([ATCGatcg]{4,})/ ) {
+    print "$2 \n";
+}
+else  {
+    print "No DNA sequence\n";
+}
+
+Part III:
+Exercise 6
+6.1) #!/pkg/bin/perl -w
+#This is the Needleman-Wunsch global alignment algorithm without gaps 
+#in the model and
+#with match value = 1, and mismatch and indel value = -1.
+#dg
+open (OUT, '> outer');         #Open a file called 'outer' for outputing.
+print "Input string 1 \n";
+$line = <>;
+chomp $line;
+@string1 =  split(//, $line);  #split up the line into individual characters
+                               #and place the characters into a list, whose
+                               #first index is 0 (here Perl has inherited
+                               #one of the worst features of C) See Johnson
+                               # 4.3 for an introduction to lists.  Look up
+                               # split in the index and read it.
+
+print "Input string 2 \n";
+$line = <>;
+chomp $line;
+@string2 =  split(//, $line);
+
+$n = @string1;                 #assigning a list to a scalar just assigns the
+                               #number of elements in the list to the scalar.
+$m = @string2;
+
+$val1 = 1; #match value
+
+$val2 = 0; #mismatch value
+
+$val3 = 0; #indel value
+
+print "The lengths of the two strings are $n, $m \n";   # Just to make sure this works.
+
+$V[0][0] = 0;                  # Assign the 0,0 entry of the V matrix
+
+for ($i = 1; $i <= $n; $i++) { # Assign the column 0  values and print 
+                               # String 1  See section 5.2 of Johnson
+                               # for loops
+   $V[$i][0] = $val3 * $i;		
+   print OUT "$string1[$i-1]";  # Note the -1 here because array indexes start at 0 (ug!)
+}
+   print OUT "\n\n";
+
+for ($j = 1; $j <= $m; $j++) { # Assign the row 0 values and print String 2
+   $V[0][$j] = $val3 * $j;
+   print OUT "$string2[$j-1]";
+}
+
+for ($i = 1; $i <= $n; $i++) {      # follow the recurrences to fill in the V matrix.
+ for ($j = 1; $j <= $m; $j++) {
+#   print OUT "$string1[$i-1], $string2[$j-1]\n"; # This is here  for debugging purposes.
+   if ($string1[$i-1] eq $string2[$j-1]) {
+     $t = $val1; } #is this where the match occurs
+   else {
+   $t = $val2;  #is this where the mismatch occurs
+   }
+
+  $max = $V[$i-1][$j-1] + $t;  
+#  print OUT "For $i, $j, t is $t \n"; # Another debugging line.
+  if ($max < $V[$i][$j-1] + $val3) {
+    $max = $V[$i][$j-1] + $val3;
+  }
+
+  if ($V[$i-1][$j] + $val3 > $max) {
+    $max = $V[$i-1][$j] + $val3;
+  }
+  $V[$i][$j] = $max; 
+ print OUT "V[$i][$j] has value $V[$i][$j]\n";
+  }
+}
+print OUT "\n The similarity value of the two strings is $V[$n][$m]\n";
+
+close(OUT);
+
+
+6.2) 
+print "Enter Output Filename?\n";
+$rstrings = <STDIN>;
+open (OUT, ">$rstrings");
+
+print "Number of Sequences??\n";
+$InputFile = <>; 
+chomp $InputFile; 
+
+print "Number of Nucleotides?\n";
+$VariableOne = <>;
+chomp $VariableOne;
+
+
+$x = 0;
+
+while ($x < $InputFile){
+$i = 0;
+
+
+$numstring = ''; # start with the empty string;
+
+while ($i < $VariableOne) {
+
+   $numstring = int(rand(4)) . $numstring; # generate a new random integer
+                                           # between 0 and 3, and concatenate
+                                           # it with the existing $numstring,
+                                           # assigning the result to $numstring.
+   $i++;                                   # increase the value of $i by one.
+}
+
+$dnastring = $numstring;                  # unneeded, but good for clarity.
+$dnastring =~ tr/0123/actg/; # translate the numbers to DNA characters.
+print OUT "$dnastring\n";
+
+$x++; 
+
+}
+
+close (OUT);
+
+print "Name of the output file you want the LCS to be placed in?\n";
+$ostrings = <>;
+chomp $ostrings; 
+open (ReturnFile, ">$ostrings");
+
+
+
+
+$VariableTwo = 0;
+$totalSum = 0;
+
+open(INFO, $rstrings);
+
+$s1 = <INFO>; #open input file
+chomp $s1;
+
+
+@string1 = split(//, $s1); 
+
+
+
+while($s2 = <INFO> ){ #reading input file from line2 
+
+
+@string2 = split(//, $s2);
+$n = @string1;
+$m = @string2;
+
+
+
+$val1 = 1; #match value
+
+$val2 = 0; #mismatch value
+
+
+$val3 = 0; #indel value
+
+
+$V[0][0] = 0;                  # Assign the 0,0 entry of the V matrix
+
+for ($i = 1; $i <= $n; $i++) { # Assign the column 0  values and print 
+                               # String 1  See section 5.2 of Johnson
+                               # for loops
+   $V[$i][0] = $val3 * $i;		
+}
+
+for ($j = 1; $j <= $m; $j++) { # Assign the row 0 values and print String 2
+   $V[0][$j] = $val3 * $j;
+}
+
+for ($i = 1; $i <= $n; $i++) {      # follow the recurrences to fill in the V matrix.
+ for ($j = 1; $j <= $m; $j++) {
+#   print OUT "$string1[$i-1], $string2[$j-1]\n"; # This is here  for debugging purposes.
+   if ($string1[$i-1] eq $string2[$j-1]) {
+     $t = $val1; } #is this where the match occurs
+   else {
+   $t = $val2;  #is this where the mismatch occurs
+   }
+
+  $max = $V[$i-1][$j-1] + $t;  
+#  print OUT "For $i, $j, t is $t \n"; # Another debugging line.
+  if ($max < $V[$i][$j-1] + $val3) {
+    $max = $V[$i][$j-1] + $val3;
+  }
+
+  if ($V[$i-1][$j] + $val3 > $max) {
+    $max = $V[$i-1][$j] + $val3;
+  }
+  $V[$i][$j] = $max; 
+  }
+}
+$totalSum = $totalSum + $V[$n][$m];
+
+$VariableTwo++; 
+$s1 = $s2; 
+
+}
+$VariableOnevg = 0;
+$VariableOnevg = $totalSum / $VariableTwo; 
+print ReturnFile "Average LCS value is: $VariableOnevg\n"; 
+
+close(ReturnFile);
+ 
+Length: 10, 20, 50, 100, 200
+LCS Average: 5.5, 11.5, 30.9, 60, 125.67
+With increase in nucleotide length, the LCS average does the same. When the length increases by about double, the LCS average also approximately doubles.
+
